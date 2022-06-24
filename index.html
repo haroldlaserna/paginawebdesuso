@@ -12,6 +12,15 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<script src="plugin/reveald3.js"></script>
+
+		<script>
+    		Reveal.initialize({
+        		// ...
+        		plugins: [ Reveald3 ],
+        		// ...
+    		});
+		</script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -32,55 +41,288 @@
 				</section>
 				
 				
-				<section>
-					<section>Motivación</section>
-					<section>Necesidades-Marco de referencia</section>
-					<section>Subjetividad-Mi forma de aprendizaje</section>
+				<section data-background="videos/motivacion.gif" data-transition="convex">
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h1>Motivación</h1></div>
+					</section >
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h1>Motivación</h1>
+					<ul>
+						<li class="fragment fade-right">Necesidad</li>
+						<li class="fragment fade-up" >Marco de referencia</li>
+						<li class="fragment fade-down">Subjetividad</li>
+						<li class="fragment fade-left">Forma de aprendizaje propia</li>
+					</ul></div>
+					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h1>Motivación</h1>
+					<ul>
+						<li class="fragment grow">Necesidad</li>
+						<li class="fragment grow" >Marco de referencia</li>
+						<li class="fragment grow"><span class="fragment highlight-red">Subjetividad</span></li>
+						<li class="fragment grow">Forma de aprendizaje propia</li>
+					</ul></div>
+					</section>
+					
 				</section>
-				<section>
-					<section>Análisis bibliométrico</section>
-					<section>Obtención de base de datos por índices</section>
-					<section>Datos</section>
-					<section>Imagen de recurrencia</section>
+				<section data-background="videos/bibliometria.gif" data-transition="convex">
+					<section data-auto-animate >
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h2>Análisis bibliométrico</h2></div>
+					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h2>Análisis bibliométrico</h2>
+					<h6>Consulta de base de datos</h6>
+					<ul>
+						<li>Google Books</li>
+						<li>Springer Link</li>
+					</ul>
+					<p>Libros obtenidos entre <span style="color:green">2008</span> y <span style="color:green">2020</span></p>
+					</div>
+					</section>
+					<section>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h2>Análisis bibliométrico</h2>
+					<h6>Libros obtenidos:</h6>
+					
+					<font size="2">
+					<table>
+						<thead>
+							<tr>
+								<th >Editorial</p></th>
+								<th>Cantidad</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>American Mathematical Society</td>
+								<td>1</td>
+								
+							</tr>
+							<tr>
+								<td>Apress</td>
+								<td>1</td>
+								
+							</tr>
+							<tr>
+								<td>Cambridge</td>
+								<td>2</td>
+								
+							</tr>
+							<tr>
+								<td>Chapman and Hall</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>CRC press</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>John Wiley & sons</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Manning</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Massachusetts Institute of Technology</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>MIT press</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Morgan & Claypool</td>
+								<td>3</td>
+							</tr>
+							<tr>
+								<td>Oxford University</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Packt Publishing</td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Springer</td>
+								<td>13</td>
+							</tr>
+							<tr>
+								<td>World Scientific</td>
+								<td>1</td>
+							</tr>
+							
+							
+							
+							
+						</tbody>
+					</table>
+					</font>
+					
+					<font size="3">
+					<p><strong>Tabla 1:</strong> Cantidad de libros por editorial afines a la computación cuántica.</p>
+					</font>
+					</div>
+					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+					<h2>Análisis bibliométrico</h2>
+					<font size="5">
+					<p>se obtuvo el índice de contenido de cada uno de los libros
+y fue puesto en un documento de valores separados por comas (.cvs)</p>
+</font>
+					<img data-src="videos/palabras.png" alt="Girl in a jacket" width = 578,0+ height = 342,5/>
+					<font size="3">
+					<p><strong>Figura 1:</strong> Recurrencia de palabras m ́as usadas en los 35 libros analizados.</p>
+					</font>
+					</div>
+					</section>
 				
 				</section>
-				<section>
-					<section data-background-video="videos/capitulo1.webm" data-background-video-loop="loop">
-					<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-					<h2>Capítulo 1</h2></section>
-					<section>Estructura</section>
-					<section>Elementos básicos-Matemáticas</section>
-					<section>Computación clásica</section>
+				<section data-background="videos/capitulo1.gif" data-transition="convex">
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+					<h2>Capítulo 1: Algunas consideraciones matemáticas importantes</h2>
+					</div>
+					</section>
+					
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+					<h2>Capítulo 1: Algunas consideraciones matemáticas importantes</h2>
+					<ul>
+						<li >Notación de Dirac</li>
+						<li class="fragment fade-up" >Operadores</li>
+						<li class="fragment fade-down">Producto tensorial</li>
+						<li class="fragment fade-left">Notación O</li>
+						<li class="fragment fade-right">Binarios y decimales</li>
+					</ul>
+					</div>
+					</section>
+					
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+					<h2>Capítulo 1: Algunas consideraciones matemáticas importantes</h2>
+					<ul>
+						<li>Notación de Dirac</li>
+						<li>Operadores</li>
+						<li>Producto tensorial</li>
+						<li class="fragment highlight-green">Notación O</li>
+						<li class="fragment highlight-green">Binarios y decimales</li>
+					</ul>
+					</div>
+					</section>
+					
+					
 				</section>
-				<section>
-					<section data-background-video="videos/capitulo2.webm" data-background-video-loop="loop">
-					<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-					Capítulo 2</section>
-					<section>Principios cuánticos</section>
-					<section>Lógica difusa-Sin pasar por Newton</section>
-					<section>Quibit-"Geometrización" (consideraciones matemáticas antes de los algoritmos)</section>
+				<section data-background="videos/capitulo2.gif" data-transition="convex">
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 2: Breve introducción a la mecánica cuántica</h2>
+					</div>
+					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 2: Breve introducción a la mecánica cuántica</h2>
+					<ul>
+						<li class="fragment fade-right">Lógica aristotélica - Mecánica clásica</li>
+						<li class="fragment fade-up" >Lógica difusa - Mecánica cuántica</li>
+					</ul>
+					
+					</div>
+					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 2: Breve introducción a la mecánica cuántica</h2>
+					<ul>
+						<li>Postulados mecánica cuántica</li>
+						<li>Operador densidad</li>
+						<li>Qubit</li>
+						<li>Esfera de Bloch</li>
+					</ul>
+					
+					</section>
+					
 				</section>
-				<section>
-					<section data-background-video="videos/anexo.webm" data-background-video-loop="loop">
-					<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-					Anexo</section>
-					<section>Necesidad y justificación-Secundario</section>
-					<section>Jupyter Notebook - TICS - Repositorio</section>
-					<section>Elementos del capítulo</section>
+				<section data-background="videos/anexo.gif" data-transition="convex">
+					<section data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Anexo: Uso de Python</h2>
+					</div>
+					</section>
+					<section data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Anexo: Uso de Python</h2>
+					<ul>
+						<li>USO de computadores de IBM</li>
+						<li>Libros no focalizados en computación cuántica</li>
+					</ul>
+					
+					</div>
+					</section>
+					<section data-background="videos/jupyter.gif" data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Anexo: Uso de Python</h2>
+					<ul>
+						<li>Jupyter notebook como una TIC</li>
+						<li>Jupyter notebook para edición personal</li>
+						
+					</ul>
+					</div>
+					</section>
+					<section data-background="videos/github.gif" data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Anexo: Uso de Python</h2>
+					<ul>
+						<li>Jupyter notebook como una TIC</li>
+						<li>Jupyter notebook para edición personal</li>
+						<li>GITHUB como repositorio de los notebooks</li>
+						
+					</ul>
+					</div>
+					</section>
 				</section>
-				<section>
-					<section data-background-video="videos/capitulo3.webm" data-background-video-loop="loop">
-					<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-					Capítulo 3</section>
-					<section>Crítica sobre la "evidencia" de entendimiento</section>
+				<section data-background="videos/capitulo3.gif" data-transition="convex">
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 3: Computación cuántica</h2></section>
+					<section data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 3: Computación cuántica</h2>
+					
+					<div class="fig-container no-margin-top" data-file="d3-fig/bar-chart.html"></div>
+					
+					</div>
+					</section>
+					
 					<section>Construcción del procedimiento del capítulo</section>
 					<section>Elementos del capítulo</section>
 					
 				</section>
-				<section>Conclusiones</section>
-				<section>Consideraciones finales</section>
-				<section>Referencias</section>
-				<section>Gracias</section>
+				<section data-transition="convex">Conclusiones</section>
+				<section data-transition="convex">Consideraciones finales</section>
+				<section data-transition="convex">Referencias</section>
+				<section data-background="videos/gracias.gif">
+				<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
+				<h1>Gracias</h1>
+				</section>
+				<section>
+    
+    
+        
+            
+        
+    
+    
+</section>
+				
+
 			</div>
 		</div>
 
@@ -88,6 +330,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/reveald3.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -98,6 +341,13 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+		</script>
+		<script>
+    		Reveal.initialize({
+        		// ...
+        		plugins: [ Reveald3 ],
+        		// ...
+    		});
 		</script>
 	</body>
 </html>

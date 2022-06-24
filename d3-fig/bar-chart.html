@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.axisWhite line{
+  stroke: white;
+}
+
+.axisWhite path{
+  stroke: white;
+}
+
+.axisWhite text{
+  fill: white;
+} 
+
+</style>
+<script src="js/d3.v4.min.js"></script>
+<body>
+
+
+<script>
+const data = [
+  {name: '000', teorico: 1,   real: 0.903},
+  {name: '001', teorico: null, real: 0.008},
+  {name: '010', teorico: null,   real: 0.013},
+  {name: '100', teorico: null,   real: 0.074},
+  {name: '101', teorico: null,   real: null},
+  {name: '110', teorico: null,   real: 0.001}
+];
+
+
+const margin = { top: 30, right: 200, bottom: 300, left: 100 };
+const width = 1000 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
+
+
+const svg = d3.select('body')
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+
+const xScale = d3.scaleBand()
+  .domain(data.map(d => d.name))
+  .range([0, width])
+  .padding(0.2);
+svg
+  .append('g')
+    .attr('transform', `translate(0, ${height})`)
+    .attr("class", "axisWhite")
+  .call(d3.axisBottom(xScale))
+  .selectAll("text")
+      .style("text-anchor", "middle")
+      .style("font-size","2.2em")
+      .style("font-family", "Raleway")
+      .style("fill","white");
+
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width-250)
+    .attr("y", height + 60)
+    .attr("style","fill:white;font-size:30px;")
+    .text("Estados Base");
+    
+
+svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -50)
+    .attr("y", -50)
+    .attr("style","font-size:30px;")
+    .attr("style","fill:white;font-size:30px;")
+    .text("Probabilidad");
+    
+
+    
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", 780)
+    .attr("y", height + 100)
+    .attr("style","fill:white;font-size:15px;")
+    .text("Figura 2: Histograma de mediciones obtenidas mediante simulación y 						computador cuántico real respectivamente.");
+svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", -20)
+    .attr("y", height + 100)
+    .attr("style","fill:white;stroke:white;font-size:15px;")
+    .text("Figura 2: ");
+
+const yScale = d3.scaleLinear()
+  .domain([0, 1])
+  .range([height, 0]);
+
+svg
+  .append('g')
+  .attr("class", "axisWhite")
+  .call(d3.axisLeft(yScale))
+  .selectAll("text")
+      .style("text-anchor", "right")
+      .style("font-size","1.5em")
+      .style("font-family", "Raleway")
+      .style("fill","white");
+
+
+function render (subject = 'teorico') {
+  const update = svg.selectAll('rect')
+    // .data(data.filter(d => d[subject]), d => d.name); //filter out name with no data
+    .data(data); // add all the data even if zero. Needed for transition
+
+  update.exit()
+    .remove();
+
+  update
+    .transition() // NEW
+    .duration(500) // Also NEW
+    .attr('y', d => yScale(d[subject]))
+    .attr('height', d => height - yScale(d[subject]));
+
+
+  update
+    .enter()
+    .append('rect')
+    .style('fill', '#648fff')
+    .attr('x', d => xScale(d.name))
+    .attr('width', d => xScale.bandwidth())
+    .attr('y', d => yScale(d[subject]))
+    .attr('height', d => height - yScale(d[subject]));
+
+}
+
+render();
+
+var _transitions = [
+      {
+        transitionForward: () => render("real"),
+        transitionBackward: () => render("teorico"),
+        index: 1
+      },
+    ]
+
+</script>
+</body>
+</html>
