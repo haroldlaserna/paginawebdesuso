@@ -12,15 +12,6 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-		<script src="plugin/reveald3.js"></script>
-
-		<script>
-    		Reveal.initialize({
-        		// ...
-        		plugins: [ Reveald3 ],
-        		// ...
-    		});
-		</script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -28,16 +19,16 @@
 				
 				<section data-background-video="videos/intro.mp4" data-background-video-loop="loop">
 				<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-				<h4 align="justify">Introducción a la computación cuántica:
-				    Fundamentos y aplicaciones para estudiantes de pregrado</h4>
+				<h5 align="justify">Introducción a la computación cuántica:
+				    Fundamentos y aplicaciones para estudiantes de pregrado</h5>
 				  
 				<p style="font-size:3vw">Sustentación de trabajo de trado en la modalidad monografía para optar al título de "Licenciatura en 					Física"<p>
 				<br> 
 				<p>Harold Yesid Laserna Diaz<p>
-				<br>
+				
 				<p style="font-size:3vw">Director: Cesar Aurelio Herreño Fierro<p>
-				<p style="font-size:2vw">Universidad Francisco José de Caldas<p>
-				<p style="font-size:2vw">2022<p>
+				<p style="font-size:1.5vw">Universidad Francisco José de Caldas<p>
+				<p style="font-size:1.5vw">2022<p>
 				</section>
 				
 				
@@ -180,7 +171,7 @@ y fue puesto en un documento de valores separados por comas (.cvs)</p>
 </font>
 					<img data-src="videos/palabras.png" alt="Girl in a jacket" width = 578,0+ height = 342,5/>
 					<font size="3">
-					<p><strong>Figura 1:</strong> Recurrencia de palabras m ́as usadas en los 35 libros analizados.</p>
+					<p><strong>Figura 1:</strong> Recurrencia de palabras más usadas en los 35 libros analizados.</p>
 					</font>
 					</div>
 					</section>
@@ -293,12 +284,209 @@ y fue puesto en un documento de valores separados por comas (.cvs)</p>
 					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
 					<h2>Capítulo 3: Computación cuántica</h2></section>
 					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h2>Capítulo 3: Computación cuántica</h2>
+					<p>Los libros suponen que algunos procedimientos son fáciles de obtener.</p>
+					<p class="fragment fade-right">Suposición de este documento: <span style="color:red"><strong>NINGÚN</strong></span> procedimiento es fácil ni evidente.</p>
+					<p class="fragment fade-right"> Procedimiento de los algoritmos <span style="color:green"><strong>PASO A PASO.</strong> </p>
+					</section>
+					
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 3: Computación cuántica</h2>
+					<ul>
+						<li>Uso de Qiskit</li>
+						<li>Compuertas cuánticas</li>
+						<li>Estado de Bell</li>
+						<li>Algoritmo de Deutsch-Jozsa</li>
+						<li>Algoritmo de Grover</li>
+						<li>Algoritmo de Shor</li>
+					</ul>
+					
+					
+					</div>
+					</section>
+					<!-- Code -->
+					<section data-markdown data-auto-animate>
+					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					 
+  <script type="text/template" >
+    ```python [1-4]
+import numpy as np
+from qiskit import *
+from qiskit.visualization import *
+from qiskit.quantum_info import Statevector
+teleportacion = QuantumCircuit(3,3) 
+teleportacion.h(1)
+teleportacion.cx(1,2) 
+teleportacion.draw("mpl")
+amplitudes = [0.94, 0.34]
+teleportacion.initialize(amplitudes, 0) 
+teleportacion.draw("mpl")
+teleportacion.cx(0,1)
+teleportacion.h(0)
+teleportacion.barrier()
+teleportacion.draw("mpl")
+teleportacion.measure(0,0)
+teleportacion.measure(1,1)
+teleportacion.barrier()
+teleportacion.x(2).c_if(1,1)
+teleportacion.z(2).c_if(0,1)
+teleportacion.measure(2,2)
+teleportacion.draw("mpl")
+sim = Aer.get_backend('aer_simulator') 
+result = sim.run(teleportacion, shots=100000).result()
+counts = result.get_counts()
+cero = counts["000"] + counts["001"] + 
+		counts["010"] + counts["011"]
+uno = counts["100"] + counts["101"] + 
+		counts["110"] + counts["111"]
+conteo_bob = {'0': cero, '1': uno}
+plot_histogram(conteo_bob)
+```
+
+  </script>
+</div>
+</section>
+<section data-markdown data-auto-animate>
+
+  <script type="text/template" data-auto-animate>
+    ```python [5-8]
+import numpy as np
+from qiskit import *
+from qiskit.visualization import *
+from qiskit.quantum_info import Statevector
+teleportacion = QuantumCircuit(3,3) 
+teleportacion.h(1)
+teleportacion.cx(1,2) 
+teleportacion.draw("mpl")
+amplitudes = [0.94, 0.34]
+teleportacion.initialize(amplitudes, 0) 
+teleportacion.draw("mpl")
+teleportacion.cx(0,1)
+teleportacion.h(0)
+teleportacion.barrier()
+teleportacion.draw("mpl")
+teleportacion.measure(0,0)
+teleportacion.measure(1,1)
+teleportacion.barrier()
+teleportacion.x(2).c_if(1,1)
+teleportacion.z(2).c_if(0,1)
+teleportacion.measure(2,2)
+teleportacion.draw("mpl")
+sim = Aer.get_backend('aer_simulator') 
+result = sim.run(teleportacion, shots=100000).result()
+counts = result.get_counts()
+cero = counts["000"] + counts["001"] + 
+		counts["010"] + counts["011"]
+uno = counts["100"] + counts["101"] + 
+		counts["110"] + counts["111"]
+conteo_bob = {'0': cero, '1': uno}
+plot_histogram(conteo_bob)
+```
+<div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 20px;height: 100%;width: 100%;">
+<img data-src="videos/entrelazamiento3.png" height="214" width="170" style="vertical-align:middle;margin:-15px 0px" class="fragment" data-fragment-index="0">
+<font size="3">
+<p style="color:black" class="fragment" data-fragment-index="0"><strong>Figura 3:</strong> Circuito inicial.</p>
+</font>
+</div>
+  </script>
+
+</section>
+
+<section data-markdown data-auto-animate>
+  <script type="text/template">
+    ```python [5-8|9-22]
+import numpy as np
+from qiskit import *
+from qiskit.visualization import *
+from qiskit.quantum_info import Statevector
+teleportacion = QuantumCircuit(3,3) 
+teleportacion.h(1)
+teleportacion.cx(1,2) 
+teleportacion.draw("mpl")
+amplitudes = [0.94, 0.34]
+teleportacion.initialize(amplitudes, 0) 
+teleportacion.draw("mpl")
+teleportacion.cx(0,1)
+teleportacion.h(0)
+teleportacion.barrier()
+teleportacion.draw("mpl")
+teleportacion.measure(0,0)
+teleportacion.measure(1,1)
+teleportacion.barrier()
+teleportacion.x(2).c_if(1,1)
+teleportacion.z(2).c_if(0,1)
+teleportacion.measure(2,2)
+teleportacion.draw("mpl")
+sim = Aer.get_backend('aer_simulator') 
+result = sim.run(teleportacion, shots=100000).result()
+counts = result.get_counts()
+cero = counts["000"] + counts["001"] + 
+		counts["010"] + counts["011"]
+uno = counts["100"] + counts["101"] + 
+		counts["110"] + counts["111"]
+conteo_bob = {'0': cero, '1': uno}
+plot_histogram(conteo_bob)
+```
+<div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 20px;height: 100%;width: 100%;">
+<img data-src="videos/teleportacion3.png" height="214" width="615"  style="vertical-align:middle;margin:-15px 0px" class="fragment">
+<font size="3">
+<p style="color:black" class="fragment current-visible" ><strong>Figura 4:</strong> Circuito Final.</p>
+</font>
+</div>
+  </script>
+</section>
+
+<section data-markdown data-auto-animate>
+  <script type="text/template">
+    ```python [9-22|23-31]
+import numpy as np
+from qiskit import *
+from qiskit.visualization import *
+from qiskit.quantum_info import Statevector
+teleportacion = QuantumCircuit(3,3) 
+teleportacion.h(1)
+teleportacion.cx(1,2) 
+teleportacion.draw("mpl")
+amplitudes = [0.94, 0.34]
+teleportacion.initialize(amplitudes, 0) 
+teleportacion.draw("mpl")
+teleportacion.cx(0,1)
+teleportacion.h(0)
+teleportacion.barrier()
+teleportacion.draw("mpl")
+teleportacion.measure(0,0)
+teleportacion.measure(1,1)
+teleportacion.barrier()
+teleportacion.x(2).c_if(1,1)
+teleportacion.z(2).c_if(0,1)
+teleportacion.measure(2,2)
+teleportacion.draw("mpl")
+sim = Aer.get_backend('aer_simulator') 
+result = sim.run(teleportacion, shots=100000).result()
+counts = result.get_counts()
+cero = counts["000"] + counts["001"] + 
+		counts["010"] + counts["011"]
+uno = counts["100"] + counts["101"] + 
+		counts["110"] + counts["111"]
+conteo_bob = {'0': cero, '1': uno}
+plot_histogram(conteo_bob)
+```
+<div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 2'px;height: 10px;width: 25%;">
+<img data-src="videos/Histograma_final.jpg" height="206" width="361" class="fragment current-visible">
+</div>
+  </script>
+</section>
+					
+					<section data-auto-animate>
 					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
 					<h2>Capítulo 3: Computación cuántica</h2>
 					
 					<div class="fig-container no-margin-top" data-file="d3-fig/bar-chart.html"></div>
 					
 					</div>
+					</section>
 					</section>
 					
 					<section>Construcción del procedimiento del capítulo</section>
@@ -312,15 +500,7 @@ y fue puesto en un documento de valores separados por comas (.cvs)</p>
 				<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
 				<h1>Gracias</h1>
 				</section>
-				<section>
-    
-    
-        
-            
-        
-    
-    
-</section>
+				
 				
 
 			</div>
@@ -331,23 +511,22 @@ y fue puesto en un documento de valores separados por comas (.cvs)</p>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/reveald3.js"></script>
+		<script src="/plugin/math/math.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, Reveald3, RevealMath.KaTeX ]
 			});
 		</script>
-		<script>
-    		Reveal.initialize({
-        		// ...
-        		plugins: [ Reveald3 ],
-        		// ...
-    		});
-		</script>
+		
 	</body>
 </html>
