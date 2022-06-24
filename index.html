@@ -306,6 +306,19 @@ y fue puesto en un documento de valores separados por comas (.cvs)</p>
 					
 					</div>
 					</section>
+					<section data-auto-animate>
+					<div  data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+					<h2>Capítulo 3: Computación cuántica</h2>
+					<p><span style="color:red">Objetivo</span>: Enviar $\alpha$ y $\beta$ del estado construido por <span style="color:green">Alice:</p>
+					\[\begin{aligned}
+					|\Psi\rangle = \alpha|0_{A}\rangle + \beta|1_{A}\rangle,
+					\end{aligned} \]
+					<p>tal que mediante compuertas cuánticas y otras condiciones <span style="color:green">Bob</span> obtenga: </p>
+					\[\begin{aligned}
+					|\Psi'\rangle = \alpha|0_{B}\rangle + \beta|1_{B}\rangle.
+					\end{aligned} \]
+					</div>
+				</section>
 					<!-- Code -->
 					<section data-markdown data-auto-animate>
 					<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
@@ -387,7 +400,7 @@ plot_histogram(conteo_bob)
 <div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 20px;height: 100%;width: 100%;">
 <img data-src="videos/entrelazamiento3.png" height="214" width="170" style="vertical-align:middle;margin:-15px 0px" class="fragment" data-fragment-index="0">
 <font size="3">
-<p style="color:black" class="fragment" data-fragment-index="0"><strong>Figura 3:</strong> Circuito inicial.</p>
+<p style="color:black" class="fragment" data-fragment-index="0"><strong>Figura 2:</strong> Circuito inicial.</p>
 </font>
 </div>
   </script>
@@ -432,7 +445,7 @@ plot_histogram(conteo_bob)
 <div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 20px;height: 100%;width: 100%;">
 <img data-src="videos/teleportacion3.png" height="214" width="615"  style="vertical-align:middle;margin:-15px 0px" class="fragment">
 <font size="3">
-<p style="color:black" class="fragment current-visible" ><strong>Figura 4:</strong> Circuito Final.</p>
+<p style="color:black" class="fragment current-visible" ><strong>Figura 3:</strong> Circuito Final.</p>
 </font>
 </div>
   </script>
@@ -474,7 +487,10 @@ conteo_bob = {'0': cero, '1': uno}
 plot_histogram(conteo_bob)
 ```
 <div style="background-color: rgba(256, 256, 256, 0.9); color: #fff; padding: 2'px;height: 10px;width: 25%;">
-<img data-src="videos/Histograma_final.jpg" height="206" width="361" class="fragment current-visible">
+<img data-src="videos/Histograma_final.jpg" height="206" width="361" class="fragment" style="vertical-align:middle;margin:-15px 0px">
+<font size="3">
+<p style="color:black" class="fragment current-visible" ><strong>Figura 4:</strong> Histograma de mediciones.</p>
+</font>
 </div>
   </script>
 </section>
@@ -487,18 +503,109 @@ plot_histogram(conteo_bob)
 					
 					</div>
 					</section>
+					
 					</section>
 					
-					<section>Construcción del procedimiento del capítulo</section>
-					<section>Elementos del capítulo</section>
-					
+				<section data-background="videos/conclusiones.gif" data-transition="convex">
+				<section data-auto-animate>
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;">
+				<h1>Conclusiones</h1>
+				</div>
 				</section>
-				<section data-transition="convex">Conclusiones</section>
-				<section data-transition="convex">Consideraciones finales</section>
-				<section data-transition="convex">Referencias</section>
+				<section data-auto-animate>
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;height: 100%;width: 100%;"">
+				<h1>Conclusiones</h1>
+				<font size="5">
+				<ul>
+				<li style="text-align:justify;line-height:1.5em">
+			Se consolidó un currículo dirigido a la inmersión en la computación cuántica. Para llevar a cabo esto, se partió desde un análisis mediante la concurrencia de palabras, el cual generó un conjunto de palabras obtenidas de una base de datos construida mediante los índices de libros obtenidos desde 2010 hasta el 2020.</li>
+			<li style="text-align:justify;line-height:1.5em">
+			A la hora de identificar qué conceptos son necesarios dentro de la computación cuántica mediante la concurrencia de palabras, se encontró que actualmente existe la necesidad de aprender Python, mecánica cuántica y tener conocimientos elementales de información cuántica para poder usar un computador cuántico.</li>
+			<li style="text-align:justify;line-height:1.5em">
+			Se desarrolló un conjunto de notebooks los cuales están alojados en Github. Los respectivos links de Github por cada capítulo se encuentran señalados en cada capítulo.
+			</li>
+				</ul>
+				</font>
+				</div>
+				</section>
+				<section data-auto-animate>
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;height: 100%;width: 100%;"">
+				<h1>Conclusiones</h1>
+				<font size="5">
+				<ul>
+				<li style="text-align:justify;line-height:1.5em">
+			 En este caso, es importante un análisis pedagógico de este trabajo, es decir, si claramente este trabajo serviría como un buen documento para los estudiantes, en otras palabras, si realmente ocurre un aplanamiento en la curva de aprendizaje.</li>
+			<li style="text-align:justify;line-height:1.5em">
+			Adaptar este trabajo para estudiantes de bachillerato. Ya que, al enseñar la Mecánica Newtoniana se necesita lógica aristotélica, entonces es posible que pueda trabajarse la computación cuántica desde la lógica difusa sin recurrir a la mecánica Newtoniana como requisito.</li>
+			<li style="text-align:justify;line-height:1.5em">
+			 Como una aproximación profunda de la fenomenología física de un computador cuántico, hacer más extenso a este documento con la explicación de lo que realmente pasa con un computador cuántico, cómo se construyen y cuáles son los parámetros que lo hacen utilizable..
+			</li>
+				</ul>
+				</font>
+				</div>
+				</section>
+				</section>
+				<section data-background-video="videos/consideraciones.webm" data-background-video-loop="loop">
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;height: 100%;width: 100%;"">
+				<h1>Consideraciones finales
+				
+				</h1>
+				</div>
+				</section>
+				<section data-background-color="#280c34" data-transition="convex">
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;height: 100%;width: 100%;"">
+				<h2>Referencias</h2>
+				<font size="3.7">
+				<ul>
+					<li>R. P. Feynman, “Simulating physics with computers,” Int. J. Theor. Phys, vol. 21, n.o 6/7,
+1982.</li>
+					<li>C. H. Bennett, “Logical reversibility of computation,” IBM journal of Research and
+Development, vol. 17, n.o 6, págs. 525-532, 1973.</li>
+<li>E. Fredkin y T. Toffoli, “Conservative logic,” International Journal of theoretical physics,
+vol. 21, n.o 3-4, págs. 219-253, 1982.</li>
+<li>R. P. Feynman, “Quantum mechanical computers,” Optics news, vol. 11, n.o 2, págs. 11-20,
+1985.</li>
+<li>L. Burgholzer, R. Raymond y R. Wille, “Verifying results of the IBM Qiskit quantum circuit
+compilation flow,” en 2020 IEEE International Conference on Quantum Computing and
+Engineering (QCE), IEEE, 2020, págs. 356-365.</li>
+<li>P. W. Shor, “Algorithms for quantum computation: discrete logarithms and factoring,”
+en Proceedings 35th annual symposium on foundations of computer science, Ieee, 1994,
+págs. 124-134.</li>
+<li>V. Bhatia y K. Ramkumar, “An Efficient Quantum Computing technique for cracking
+RSA using Shor’s Algorithm,” en 2020 IEEE 5th International Conference on Computing
+Communication and Automation (ICCCA), IEEE, 2020, p ́ags. 89-94.</li>
+<li>A. Cross, “The IBM Q experience and QISKit open-source quantum computing software,”
+APS, vol. 2018, p ́ags. L58-003, 2018.</li>
+<li>A. Dutt, Z. Vernon y C. Weedbrook, Methods and apparatus for producing highly tunable
+squeezed light, US Patent 10,809,592, 2020.</li>
+<li>Google. (2021). “Google books,” dirección: https://www.google.com/search ?tbm=bks&q=quantum+computing (visitado 01-07-2021).</li>
+<li>Springer. (2021). “Springer Link,” dirección: https://link-springer-com.bdigital.udistrital.edu.co/ (visitado 01-07-2021)</li>
+<li>A. Mueller. (2021). “WorldCloud Library in Python,” dirección: https://link-springer-com.bdigital.udistrital.edu.co/ (visitado 02-07-2021).</li>
+<li>S. G. Krantz, A guide to complex variables. American Mathematical Soc., 2014, vol. 32.</li>
+<li>M. A. Nielsen e I. Chuang, Quantum computation and quantum information, 2002.</li>
+<li>V. Buzek y M. Hillery, “Quantum copying: Beyond the no-cloning theorem,” Physical Review A, vol. 54, n.o 3, págs. 1844-1852, 1996. DOI: 10.1103/physreva.54.1844. dirección: https://doi.org/10.1103%2Fphysreva.54.1844.</li>
+<li>H. F. Arena, “La biblia de Linux,” MP ediciones Buenos Aires Argentina, pags, vol. 264, 2009.
+2009.</li>
+<li>R. González Duque, Python para todos, 2014.</li>
+				</ul>
+				</font>
+				</div>
+				</section>
+				
+				<section data-background-color="crimson" data-background-transition="zoom" data-transition="fade" >
+				
+				<div data-id="box" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 20px;height: 100%;width: 90%;"">
+				<h2 style="color:crimson">Material audiovisual</h2>
+				<video data-autoplay src="videos/final.webm" height="50%" width="50%"></video>
+				<p style="color:crimson">Fuente: Youtube</p>
+				<p style="color:crimson">Canal: Kurzgesagt – In a Nutshell</p>
+				<p style="color:crimson">Vídeo: Quantum Computers Explained – Limits of Human Technology</p>
+				</div>
+				</section>
 				<section data-background="videos/gracias.gif">
 				<div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
-				<h1>Gracias</h1>
+				
+				<h1>GRACIAS</h1>
 				</section>
 				
 				
@@ -517,6 +624,7 @@ plot_histogram(conteo_bob)
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				
 				hash: true,
 				controls: true,
 				progress: true,
